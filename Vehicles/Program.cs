@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Vehicles_good_preparation.Properties;
 
 namespace Vehicles
 {
@@ -10,12 +11,14 @@ namespace Vehicles
     {
         static void Main(string[] args)
         {
-            Train t = new Train();
-            Car c = new Car();
+            VehicleWithWheels train = new Train("Shinkansen", 10);
+            VehicleWithWheels car = new Car("Volvo", 4);
 
-            Console.WriteLine(t.DescribeIt(2));
-            Console.WriteLine(c.DescribeIt(2));
-            Console.WriteLine(t.GetLength());
+            Console.WriteLine(train.Describe());
+            Console.WriteLine(train.CountVelocity(10,5));
+
+            Console.WriteLine(car.Describe());
+            Console.WriteLine(car.CountVelocity(30,5));
 
             Console.ReadKey();
         }

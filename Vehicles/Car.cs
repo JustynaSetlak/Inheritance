@@ -1,47 +1,16 @@
-﻿namespace Vehicles
+﻿using Vehicles_good_preparation.Properties;
+
+namespace Vehicles
 {
-    public class Car : IVehicle
+    public class Car : VehicleWithWheels
     {
-        private int wheel;
-        private string brand;
-        private string model;
-        private int number;
-
-        public int getW()
+        public Car(string producer, int numberOfWheels) : base(producer, numberOfWheels)
         {
-            return wheel;
         }
 
-        public int Velocity(int z, int k)
+        public override string Describe()
         {
-            int w = z + k;
-            int m = 10;
-            return k / z;
-        }
-
-        public string DescribeIt(int z)
-        {
-            return "This is car with " + number;
-        }
-
-        public int GetLength()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public string GetName()
-        {
-            return "";
-        }
-
-        public int GetVelocity()
-        {
-            return 0;
-        }
-
-        public string SetName()
-        {
-            throw new System.NotImplementedException();
+            return "This is a car, which contains " + NumberOfWheels + " wheels.";
         }
     }
 }

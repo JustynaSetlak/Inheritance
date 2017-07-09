@@ -1,38 +1,16 @@
-﻿namespace Vehicles
+﻿using Vehicles_good_preparation.Properties;
+
+namespace Vehicles
 {
-    public class Train : IVehicle
+    public class Train : VehicleWithWheels
     {
-        private string name;
-
-
-        public string DescribeIt(int z)
+        public Train(string producer, int numberOfWheels) : base(producer, numberOfWheels)
         {
-            return "This is train";
         }
 
-        public int Velocity(int z, int k)
+        public override string Describe()
         {
-            return z / k;
-        }
-
-        public int GetLength()
-        {
-            return 10;
-        }
-
-        public string GetName()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public int GetVelocity()
-        {
-            return 0;
-        }
-
-        public string SetName()
-        {
-            throw new System.NotImplementedException();
+            return "This is train produced by " + Producer;
         }
     }
 }
